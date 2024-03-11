@@ -9,11 +9,7 @@ CURR_DIR = os.getcwd()
 
 client = load_client()
 
-password = os.getenv("MONGO_PASSWORD")
-
-uri = f"mongodb+srv://Stupnikjs:{password}@cluster0.oiowsz6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 # Create a new client and connect to the server
-
 
 # Send a ping to confirm a successful connection
 try:
