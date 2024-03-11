@@ -1,3 +1,6 @@
 requests
 pymongo[srv]
 python-dotenv
+pandas 
+pandas-gbq
+google-auth

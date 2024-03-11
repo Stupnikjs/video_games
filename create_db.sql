@@ -4,6 +4,6 @@ CREATE OR REPLACE TABLE `datalake.video_games`
     avg_note FLOAT64, 
     user_note INT64, 
     oldest_note INT64,
-    latest INT64, 
+    latest_note INT64, 
 
 )

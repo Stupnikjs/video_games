@@ -1,3 +1,5 @@
 .env
 games_ratings
 .venv
+google_credentials.json
+__pycache__
