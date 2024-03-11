@@ -31,17 +31,23 @@ try:
     print('starting chunking')
     
     for i in range(num_chunk):
-        chunk = lines[i*1000:(i+1)*1000]
-        bulk_data = [InsertOne(json.loads(line)) for line in chunk]
-        col.bulk_write(bulk_data, ordered=False)
-        print(f'End of chunk {i}')
+        if i != num_chunk - 1:
+            chunk = lines[i*1000:(i+1)*1000]
+            bulk_data = [InsertOne(json.loads(line)) for line in chunk]
+            # bulk_write to write multiples entries in the collection at once  
+            col.bulk_write(bulk_data, ordered=False)
+            print(f'End of chunk {i}')
+        else:
+            chunk = lines[i*1000:]
+            bulk_data = [InsertOne(json.loads(line)) for line in chunk]
+            col.bulk_write(bulk_data, ordered=False)
+            print(f'End of last chunk {i}')
+            
     end = time.time()
 
     print(f'took {end-start} second to chunk')
-
     
 
-    # bulk
    
 
             
