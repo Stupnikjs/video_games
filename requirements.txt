@@ -4,3 +4,4 @@ python-dotenv
 pandas 
 pandas-gbq
 google-auth
+pendulum
